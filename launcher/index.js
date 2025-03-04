@@ -4,13 +4,16 @@ const path = require('node:path');
 function createWindow() {
     const win = new BrowserWindow({
         width: 800,
-        height: 600,
+        height: 450 + 30,
+        autoHideMenuBar: true,
+        title: 'Launcher',
         webPreferences: {
-            preload: path.join(__dirname, 'preload.js')
+            // preload: path.join(__dirname, 'preload.js')
         }
     })
 
-    win.loadFile('index.html');
+    win.loadFile('launcher/index.html');
+    // win.loadFile('game/episode_1/canvas.html');
 }
 
 app.whenReady().then(() => {

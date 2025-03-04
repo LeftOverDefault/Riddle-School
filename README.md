@@ -1,9 +1,9 @@
-# Riddle School Remake
+# Riddle School (Fan Game)
 
-Welcome to the Riddle School Remake! This project is a recreation of JonBro's classic Flash game, Riddle School. Our goal is to bring this beloved game to modern platforms while preserving the charm and creativity of the original.
+Welcome to the Riddle School Remake! This project is a fan made recreation (sort of) of JonBro's classic Flash game, Riddle School. My goal is to bring this beloved game to modern platforms while preserving the charm and creativity of the original.
 
 ## Table of Contents
-- [Riddle School Remake](#riddle-school-remake)
+- [Riddle School (Fan Game)](#riddle-school-fan-game)
   - [Table of Contents](#table-of-contents)
   - [About the Game](#about-the-game)
   - [Credits](#credits)
