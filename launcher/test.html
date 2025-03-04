@@ -1,25 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Click %amp; Place Game</title>
     <style>
-        body { text-align: center; }
-        canvas { background: #f0f0f0; }
-        .draggable { position: absolute; cursor: grab; transition: transform 0.2s ease-in-out; }
+        body {
+            text-align: center;
+        }
+
+        canvas {
+            background: #f0f0f0;
+        }
+
+        .draggable {
+            position: absolute;
+            cursor: grab;
+            transition: transform 0.2s ease-in-out;
+        }
     </style>
 </head>
+
 <body>
     <h1>Click %amp; Place Game</h1>
     <canvas id="gameCanvas" width="800" height="600"></canvas>
     <script>
         const canvas = document.getElementById("gameCanvas");
         const ctx = canvas.getContext("2d");
-        
+
         const target = { x: 500, y: 300, width: 100, height: 100 };
         let draggable = { x: 100, y: 100, width: 100, height: 100, dragging: false };
-        
+
         function draw() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             ctx.fillStyle = "red";
@@ -27,14 +39,14 @@
             ctx.fillStyle = "blue";
             ctx.fillRect(draggable.x, draggable.y, draggable.width, draggable.height);
         }
-        
+
         canvas.addEventListener("mousedown", (e) => {
             if (e.offsetX > draggable.x && e.offsetX < draggable.x + draggable.width &&
                 e.offsetY > draggable.y && e.offsetY < draggable.y + draggable.height) {
                 draggable.dragging = true;
             }
         });
-        
+
         canvas.addEventListener("mousemove", (e) => {
             if (draggable.dragging) {
                 draggable.x = e.offsetX - draggable.width / 2;
@@ -42,7 +54,7 @@
                 draw();
             }
         });
-        
+
         canvas.addEventListener("mouseup", () => {
             draggable.dragging = false;
             if (isColliding(draggable, target)) {
@@ -51,13 +63,14 @@
             }
             draw();
         });
-        
+
         function isColliding(obj1, obj2) {
             return !(obj1.x + obj1.width < obj2.x || obj1.x > obj2.x + obj2.width ||
-                     obj1.y + obj1.height < obj2.y || obj1.y > obj2.y + obj2.height);
+                obj1.y + obj1.height < obj2.y || obj1.y > obj2.y + obj2.height);
         }
-        
+
         draw();
     </script>
 </body>
+
 </html>

@@ -1,11 +1,13 @@
-# Riddle School (Fan Game)
+# Riddle School
 
 Welcome to the Riddle School Remake! This project is a fan made recreation (sort of) of JonBro's classic Flash game, Riddle School. My goal is to bring this beloved game to modern platforms while preserving the charm and creativity of the original.
 
-## Table of Contents
-- [Riddle School (Fan Game)](#riddle-school-fan-game)
-  - [Table of Contents](#table-of-contents)
+## Contents
+- [Riddle School](#riddle-school)
+  - [Contents](#contents)
   - [About the Game](#about-the-game)
+  - [Original Games](#original-games)
+  - [Remake](#remake)
   - [Credits](#credits)
   - [Gameplay](#gameplay)
   - [Installation](#installation)
@@ -15,6 +17,26 @@ Welcome to the Riddle School Remake! This project is a fan made recreation (sort
 ## About the Game
 
 Riddle School is a point-and-click adventure game where you play as Phil Eggtree, a student determined to escape from his school. The game is known for its humor, clever puzzles, and engaging storyline. This remake aims to stay true to the original while updating the graphics and interface for a better player experience.
+
+## Original Games
+
+- ### [Riddle School 1](./docs/original/episode_1.md)
+- ### [Riddle School 2](./docs/original/episode_2.md)
+- ### [Riddle School 3](./docs/original/episode_3.md)
+- ### [Riddle School 4](./docs/original/episode_4.md)
+- ### [Riddle School 5](./docs/original/episode_5.md)
+- ### [Riddle Transfer](./docs/original/episode_6.md)
+- ### [Riddle Transfer 2](./docs/original/episode_7.md)
+
+## Remake
+
+- ### [Riddle School 1](./docs/remake/episode_1.md)
+- ### [Riddle School 2](./docs/remake/episode_2.md)
+- ### [Riddle School 3](./docs/remake/episode_3.md)
+- ### [Riddle School 4](./docs/remake/episode_4.md)
+- ### [Riddle School 5](./docs/remake/episode_5.md)
+- ### [Riddle School 6](./docs/remake/episode_6.md)
+- ### [Riddle School 7](./docs/remake/episode_7.md)
 
 ## Credits
 

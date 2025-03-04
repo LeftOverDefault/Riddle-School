@@ -3,8 +3,8 @@ const path = require('node:path');
 
 function createWindow() {
     const win = new BrowserWindow({
-        width: 800,
-        height: 450 + 30,
+        width: 1600,
+        height: 900 + 30,
         autoHideMenuBar: true,
         title: 'Launcher',
         webPreferences: {
@@ -12,7 +12,7 @@ function createWindow() {
         }
     })
 
-    win.loadFile('launcher/index.html');
+    win.loadFile("./launcher/index.html");
     // win.loadFile('game/episode_1/canvas.html');
 }
 

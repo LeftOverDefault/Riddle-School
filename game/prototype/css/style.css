@@ -4,9 +4,10 @@
     overflow: hidden;
     /* image-rendering:optimizeQuality; */
 }
+
 canvas {
     width: 100%;
     background: #2576bd;
     aspect-ratio: 192 / 108;
     /* display: block; */
-} 
+}
