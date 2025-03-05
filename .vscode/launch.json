@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Debug Main",
+            "name": "Debug Main Process",
             "type": "node",
             "request": "launch",
             "cwd": "${workspaceFolder}",
@@ -15,6 +15,34 @@
             },
             "args": [
                 "."
+            ],
+            "outputCapture": "std"
+        },
+        {
+            "name": "Build Main",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron-forge",
+            "windows": {
+                "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron-forge.cmd"
+            },
+            "args": [
+                "make"
+            ],
+            "outputCapture": "std"
+        },
+        {
+            "name": "Package Main",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron-forge",
+            "windows": {
+                "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron-forge.cmd"
+            },
+            "args": [
+                "package"
             ],
             "outputCapture": "std"
         }

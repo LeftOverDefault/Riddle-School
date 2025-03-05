@@ -2,32 +2,35 @@ const { app, BrowserWindow } = require('electron/main');
 const path = require('node:path');
 
 function createWindow() {
-    const win = new BrowserWindow({
-        width: 1600,
-        height: 900 + 30,
+    const window = new BrowserWindow({
+        width: 800,
+        height: 450 + 30,
         autoHideMenuBar: true,
         title: 'Launcher',
+        icon: './icon.ico',
         webPreferences: {
+            devTools: true,
             // preload: path.join(__dirname, 'preload.js')
         }
     })
 
-    win.loadFile("./launcher/index.html");
-    // win.loadFile('game/episode_1/canvas.html');
+    // window.loadFile("./launcher/index.html");
+    window.loadFile('game/prototype/index.html');
+    window.webContents.openDevTools();
 }
 
 app.whenReady().then(() => {
     createWindow()
-
+    
     app.on('activate', () => {
         if (BrowserWindow.getAllWindows().length === 0) {
-            createWindow()
+            createWindow();
         }
     })
 })
 
 app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') {
-        app.quit()
+        app.quit();
     }
 })
