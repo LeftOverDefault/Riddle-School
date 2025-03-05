@@ -1,6 +1,6 @@
-//===============//
-// DECLARATIONS  //
-//===============//
+//================//
+//  DECLARATIONS  //
+//================//
 
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
@@ -14,35 +14,44 @@ document.addEventListener("resize", () => {
 });
 
 
-
-
 //=====================//
 //  SCENE COMPOSITION  //
 //=====================//
 
-let mousePosition = { x: 0, y: 0 };
-canvas.addEventListener("mousemove", (event) => {
-    mousePosition.x = event.clientX;
-    mousePosition.y = event.clientY;
-});
+let mouse = new Mouse();
 
 class MainMenu {
     constructor() {
         this.startButton = new Button("./assets/phil.png");
+
+        this.startButtonPosition = { x: 0, y: 0 };
+
+        this.startButton.hoverEvent = () => {
+            if (this.startButtonPosition.x < 500) {
+                this.startButtonPosition.x += 1;
+            }
+            this.startButtonPosition.y = 0;
+        }
     }
 
     draw() {
-        return [this.startButton.image, 0, 0, this.startButton.image.width, this.startButton.image.height];
+        return [this.startButton.image, this.startButtonPosition.x, this.startButtonPosition.y, this.startButton.image.width, this.startButton.image.height];
     }
 
     update(deltaTime) {
-        this.startButton.hovered(mousePosition);
-        this.startButton.clicked(mousePosition);
+        if (this.startButton.hovered(mouse) == false) {
+            if (this.startButtonPosition.x > 0) {
+                this.startButtonPosition.x -= 0.15 * deltaTime;
+            }
+            this.startButtonPosition.y = 0;
+        }
+        this.startButton.clicked(mouse, true);
+        mouse.resetClickState();
     }
 }
-let philSpriteSheet = new ResponsiveImage("./assets/phil.png");
 
 let mainMenu = new MainMenu()
+
 
 //=============//
 //  GAME LOOP  //
@@ -55,7 +64,7 @@ const update = (delta) => {
 
 const draw = () => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
+
     // ctx.drawImage(image, sx, sy, sw, sh, dx, dy, dw, dh);
     // sx, sy, sw, sh: source
     // x, y, width, height: destination

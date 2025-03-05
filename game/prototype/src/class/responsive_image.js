@@ -8,7 +8,7 @@ class ResponsiveImage {
         this.aspectRatio = this.image.width / this.image.height;
     }
 
-    resize(newWidth=null, newHeight=null) {
+    resize(newWidth = null, newHeight = null) {
         if (newWidth && newHeight) {
             this.image.width = newWidth;
             this.image.height = newHeight;

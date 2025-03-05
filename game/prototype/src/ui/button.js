@@ -3,26 +3,66 @@ class Button extends ResponsiveImage {
         super(imageSrc);
     }
 
-    hovered(mousePosition) {
-        let x = mousePosition.x;
-        let y = mousePosition.y;
+    hovered(mouse) {
+        let { x, y } = mouse.position;
 
-        if (x > this.image.x && x < this.image.x + this.image.width && y > this.image.y && y < this.image.y + this.image.height) {
+        if (
+            x > this.image.x &&
+            x < this.image.x + this.image.width &&
+            y > this.image.y &&
+            y < this.image.y + this.image.height
+        ) {
+            this.hoverEvent();
+
             return true;
+        } else {
+            return false;
+        }
+
+
+    }
+
+    clicked(mouse, singleClick = false) {
+        if (this.hovered(mouse)) {
+            if (singleClick && mouse.leftClicked) {
+                this.clickEvent();
+                return true;
+            } else if (!singleClick && mouse.leftMouseDown) {
+                this.clickEvent();
+                return true;
+            }
         }
         return false;
     }
 
-    clicked(mousePosition) {
-        if (this.hovered(mousePosition) && document) {
-            this.event();
-            return true;
-        }
-        return false;
-    }
-
-    event() {
-        // ...
+    clickEvent() {
         console.log("Button clicked!");
     }
+
+    hoverEvent() {
+        console.log("Button hovered!");
+    }
+
+    // hovered(mouse) {
+    //     let x = mouse.position.x;
+    //     let y = mouse.position.y;
+
+    //     if (x > this.image.x && x < this.image.x + this.image.width && y > this.image.y && y < this.image.y + this.image.height) {
+    //         return true;
+    //     }
+    //     return false;
+    // }
+
+    // clicked(mouse) {
+    //     if (this.hovered(mouse) && mouse.leftMouseDown) {
+    //         this.event();
+    //         return true;
+    //     }
+    //     return false;
+    // }
+
+    // event() {
+    //     // ...
+    //     console.log("Button clicked!");
+    // }
 }
